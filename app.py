@@ -29,7 +29,7 @@ class Daemon:
 
         for folder in Configuration.WATCH_FOLDERS:
             # Add a new watch on /tmp for ALL_EVENTS.
-            self.wm.add_watch(folder, pyinotify.ALL_EVENTS)
+            self.wm.add_watch(folder, pyinotify.IN_CREATE)
             logging.debug("Found folder: "+folder)
 
     def start(self):
