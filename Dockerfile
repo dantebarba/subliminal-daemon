@@ -11,4 +11,4 @@ RUN mkdir /tv
 ADD app.py .
 ADD init.sh .
 
-CMD [ "/bin/bash", "./init.sh" ]
+CMD [ "bash", "./init.sh" ]
