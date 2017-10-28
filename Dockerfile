@@ -5,4 +5,4 @@ RUN pip install subliminal
 
 ADD app.py .
 
-CMD [ "python", "./app.py" ]
+ENTRYPOINT [ "python", "./app.py" ]
