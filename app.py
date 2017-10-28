@@ -14,7 +14,7 @@ class Configuration:
 class Daemon:
 
 
-    def __init__(watch_folders=Configuration.WATCH_FOLDERS):
+    def __init__(self, watch_folders=Configuration.WATCH_FOLDERS):
         self.wm = pyinotify.WatchManager()
         # Instanciate a new WatchManager (will be used to store watches).
 
