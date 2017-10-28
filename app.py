@@ -22,9 +22,9 @@ class Daemon:
         # process events).
         self.notifier = pyinotify.Notifier(self.wm)
 
-        for folder in watch_folders:
+        for folder in Configuration.WATCH_FOLDERS:
             # Add a new watch on /tmp for ALL_EVENTS.
-            self.wm.add_watch(Configuration.folder, pyinotify.ALL_EVENTS)
+            self.wm.add_watch(folder, pyinotify.ALL_EVENTS)
 
     def start(self):
         try:
