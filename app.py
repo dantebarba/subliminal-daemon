@@ -3,6 +3,7 @@
 import pyinotify
 import sys
 import logging
+import functools
 from datetime import timedelta
 from babelfish import Language
 from subliminal import download_best_subtitles, region, save_subtitles, scan_videos
@@ -34,13 +35,13 @@ class Daemon:
 
     def start(self):
         try:
-            self.notifier.loop(callback=self.pull_subtitles)
+            self.notifier.loop(callback=Daemon.pull_subtitles)
             logging.debug("Daemon started.")
         except pyinotify.NotifierError as err:
             logging.error(err)
             print >> sys.stderr, err
 
-    def pull_subtitles(self):
+    def pull_subtitles(notifier):
         SubliminalClient.pull_subtitles()
 
 class SubliminalClient:
