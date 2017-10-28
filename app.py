@@ -30,7 +30,7 @@ class Daemon:
         try:
             notifier.loop(daemonize=True, callback=self.pull_subtitles,
                           pid_file='/tmp/pyinotify.pid', stdout='/tmp/pyinotify.log')
-        except pyinotify.NotifierError, err:
+        except pyinotify.NotifierError as err:
             print >> sys.stderr, err
 
     def pull_subtitles(self):
