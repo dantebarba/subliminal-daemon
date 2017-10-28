@@ -28,7 +28,7 @@ class Daemon:
 
     def start(self):
         try:
-            notifier.loop(daemonize=True, callback=self.pull_subtitles,
+            self.notifier.loop(daemonize=True, callback=self.pull_subtitles,
                           pid_file='/tmp/pyinotify.pid', stdout='/tmp/pyinotify.log')
         except pyinotify.NotifierError as err:
             print >> sys.stderr, err
