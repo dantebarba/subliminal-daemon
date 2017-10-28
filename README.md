@@ -10,4 +10,5 @@ subliminal-daemon
   volumes:
     - "/tvshows:/tv"
     - "/movies:/movies"
-  
+    - "/logs:/tmp"
+´´´
