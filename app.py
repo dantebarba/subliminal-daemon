@@ -20,7 +20,7 @@ class Daemon:
 
         # Associate this WatchManager with a Notifier (will be used to report and
         # process events).
-        self.notifier = pyinotify.Notifier(wm)
+        self.notifier = pyinotify.Notifier(self.wm)
 
         for folder in watch_folders:
             # Add a new watch on /tmp for ALL_EVENTS.
