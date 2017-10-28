@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM python:alpine
 
 RUN pip install pyinotify
 RUN pip install subliminal
@@ -9,5 +9,6 @@ RUN mkdir /tv
 
 
 ADD app.py .
+ADD init.sh .
 
-ENTRYPOINT [ "python", "./app.py" ]
+CMD [ "/bin/bash", "./init.sh" ]
