@@ -34,7 +34,7 @@ class Daemon:
 
     def start(self):
         try:
-            self.notifier.loop(daemonize=False, callback=self.pull_subtitles)
+            self.notifier.loop(callback=self.pull_subtitles)
             logging.debug("Daemon started.")
         except pyinotify.NotifierError as err:
             logging.error(err)
