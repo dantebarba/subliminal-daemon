@@ -1,4 +1,4 @@
-FROM python:3
+FROM alpine:3.1
 
 RUN pip install pyinotify
 RUN pip install subliminal
