@@ -55,7 +55,8 @@ class SubliminalClient:
             subtitles = download_best_subtitles(videos, {Language('eng'), Language('spa')})
             for v in videos:
                 save_subtitles(v, subtitles[v])
-                logging.debug("Pulling video: "+v.title)
+                if v.title is not None:
+                    logging.debug("Pulling video: "+v.title)
 
 logging.debug("Start up")
 daemon = Daemon()
