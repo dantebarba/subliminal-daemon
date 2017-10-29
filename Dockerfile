@@ -9,6 +9,5 @@ RUN mkdir /tv
 
 
 ADD app.py .
-ADD init.sh .
 
 CMD [ "python", "./app.py" ]
