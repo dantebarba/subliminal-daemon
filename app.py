@@ -41,7 +41,10 @@ class Daemon:
             print >> sys.stderr, err
 
     def pull_subtitles(notifier):
-        SubliminalClient.pull_subtitles()
+        try:
+            SubliminalClient.pull_subtitles()
+        except Exception as ex:
+            logging.error(ex, exc_info=True)
 
 class SubliminalClient:
     # configure the cache
