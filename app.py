@@ -11,7 +11,7 @@ from subliminal import download_best_subtitles, region, save_subtitles, scan_vid
 
 class Configuration:
     WATCH_FOLDERS = [ "/tv", "/movies"]
-    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(level=logging.ERROR)
 
 class Daemon:
 
